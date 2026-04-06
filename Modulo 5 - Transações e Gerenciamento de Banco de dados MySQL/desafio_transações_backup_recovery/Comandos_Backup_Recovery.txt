@@ -1,0 +1,10 @@
+Cd C:\Program Files\MySQL\MySQL Server 8.0\bin 
+
+-- backup completo database ecommerce
+mysqldump --user root -p --databases ecommerce > ecommerce_backup.sql
+
+-- recovery 
+mysql --user root -p ecommerce_recovery < ecommerce_backup.sql 
+
+backup com routines
+mysqldump --routines --triggers --events -u root -p ecommerce > ecommerce_backup_routines.sql
